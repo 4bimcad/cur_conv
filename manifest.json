@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Currency Converter",
+  "version": "1.0",
+  "description": "Quickly convert between currencies with real-time exchange rates and intuitive flag icons. Powered by Mavatec Corporation.",
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  },
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "96": "icon.png",
+    "128": "icon.png"
+  }
+}

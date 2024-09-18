@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styless.css"> 
+    <title>Currency Converter with Flags</title>
+    <!-- Подключение библиотеки Select2 -->
+    <link href="select2.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <input type="number" id="amount" placeholder="Enter amount" title="Amount of Currency" min="0" step="any">
+        <select id="mainCurrency" class="currency-select">
+                <option value="usd" data-flag="https://flagcdn.com/us.svg">USD - US Dollar</option>
+                <option value="eur" data-flag="https://flagcdn.com/eu.svg">EUR - Euro</option>
+                <option value="gbp" data-flag="https://flagcdn.com/gb.svg">GBP - British Pound</option>
+                <option value="cad" data-flag="https://flagcdn.com/ca.svg">CAD - Canadian Dollar</option>
+                <option value="jpy" data-flag="https://flagcdn.com/jp.svg">JPY - Japanese Yen</option>
+                <option value="cny" data-flag="https://flagcdn.com/cn.svg">CNY - Chinese Yuan</option>
+                <option value="aed" data-flag="https://flagcdn.com/ae.svg">AED - Emirati Dirham</option>
+                <option value="afn" data-flag="https://flagcdn.com/af.svg">AFN - Afghan Afghani</option>
+                <option value="all" data-flag="https://flagcdn.com/al.svg">ALL - Albanian Lek</option>
+                <option value="amd" data-flag="https://flagcdn.com/am.svg">AMD - Armenian Dram</option>
+                <option value="aoa" data-flag="https://flagcdn.com/ao.svg">AOA - Angolan Kwanza</option>
+                <option value="ars" data-flag="https://flagcdn.com/ar.svg">ARS - Argentine Peso</option>
+                <option value="aud" data-flag="https://flagcdn.com/au.svg">AUD - Australian Dollar</option>
+                <option value="awg" data-flag="https://flagcdn.com/aw.svg">AWG - Aruban or Dutch Guilder</option>
+                <option value="azn" data-flag="https://flagcdn.com/az.svg">AZN - Azerbaijan Manat</option>
+                <option value="bam" data-flag="https://flagcdn.com/ba.svg">BAM - Bosnian Convertible Mark</option>
+                <option value="bbd" data-flag="https://flagcdn.com/bb.svg">BBD - Barbadian or Bajan Dollar</option>
+                <option value="bgn" data-flag="https://flagcdn.com/bg.svg">BGN - Bulgarian Lev</option>
+                <option value="bhd" data-flag="https://flagcdn.com/bh.svg">BHD - Bahraini Dinar</option>
+                <option value="bif" data-flag="https://flagcdn.com/bi.svg">BIF - Burundian Franc</option>
+                <option value="bmd" data-flag="https://flagcdn.com/bm.svg">BMD - Bermudian Dollar</option>
+                <option value="bnd" data-flag="https://flagcdn.com/bn.svg">BND - Bruneian Dollar</option>
+                <option value="bob" data-flag="https://flagcdn.com/bo.svg">BOB - Bolivian Bolíviano</option>
+                <option value="brl" data-flag="https://flagcdn.com/br.svg">BRL - Brazilian Real</option>
+                <option value="bsd" data-flag="https://flagcdn.com/bs.svg">BSD - Bahamian Dollar</option>
+                <option value="btn" data-flag="https://flagcdn.com/bt.svg">BTN - Bhutanese Ngultrum</option>
+                <option value="bwp" data-flag="https://flagcdn.com/bw.svg">BWP - Botswana Pula</option>
+                <option value="byn" data-flag="https://flagcdn.com/by.svg">BYN - Belarusian Ruble</option>
+                <option value="bzd" data-flag="https://flagcdn.com/bz.svg">BZD - Belizean Dollar</option>
+                <option value="cdf" data-flag="https://flagcdn.com/cd.svg">CDF - Congolese Franc</option>
+                <option value="chf" data-flag="https://flagcdn.com/ch.svg">CHF - Swiss Franc</option>
+                <option value="clp" data-flag="https://flagcdn.com/cl.svg">CLP - Chilean Peso</option>
+                <option value="cnh" data-flag="https://flagcdn.com/cn.svg">CNH - Chinese Yuan Renminbi Offshore</option>
+                <option value="cop" data-flag="https://flagcdn.com/co.svg">COP - Colombian Peso</option>
+                <option value="crc" data-flag="https://flagcdn.com/cr.svg">CRC - Costa Rican Colon</option>
+                <option value="cup" data-flag="https://flagcdn.com/cu.svg">CUP - Cuban Peso</option>
+                <option value="cve" data-flag="https://flagcdn.com/cv.svg">CVE - Cape Verdean Escudo</option>
+                <option value="czk" data-flag="https://flagcdn.com/cz.svg">CZK - Czech Koruna</option>
+                <option value="djf" data-flag="https://flagcdn.com/dj.svg">DJF - Djiboutian Franc</option>
+                <option value="dkk" data-flag="https://flagcdn.com/dk.svg">DKK - Danish Krone</option>
+                <option value="dop" data-flag="https://flagcdn.com/do.svg">DOP - Dominican Peso</option>
+                <option value="dzd" data-flag="https://flagcdn.com/dz.svg">DZD - Algerian Dinar</option>
+                <option value="egp" data-flag="https://flagcdn.com/eg.svg">EGP - Egyptian Pound</option>
+                <option value="ern" data-flag="https://flagcdn.com/er.svg">ERN - Eritrean Nakfa</option>
+                <option value="etb" data-flag="https://flagcdn.com/et.svg">ETB - Ethiopian Birr</option>
+                <option value="fjd" data-flag="https://flagcdn.com/fj.svg">FJD - Fijian Dollar</option>
+                <option value="fkp" data-flag="https://flagcdn.com/fk.svg">FKP - Falkland Island Pound</option>
+                <option value="gel" data-flag="https://flagcdn.com/ge.svg">GEL - Georgian Lari</option>
+                <option value="ggp" data-flag="https://flagcdn.com/gg.svg">GGP - Guernsey Pound</option>
+                <option value="ghs" data-flag="https://flagcdn.com/gh.svg">GHS - Ghanaian Cedi</option>
+                <option value="gip" data-flag="https://flagcdn.com/gi.svg">GIP - Gibraltar Pound</option>
+                <option value="gmd" data-flag="https://flagcdn.com/gm.svg">GMD - Gambian Dalasi</option>
+                <option value="gnf" data-flag="https://flagcdn.com/gn.svg">GNF - Guinean Franc</option>
+                <option value="gtq" data-flag="https://flagcdn.com/gt.svg">GTQ - Guatemalan Quetzal</option>
+                <option value="gyd" data-flag="https://flagcdn.com/gy.svg">GYD - Guyanese Dollar</option>
+                <option value="hkd" data-flag="https://flagcdn.com/hk.svg">HKD - Hong Kong Dollar</option>
+                <option value="hnl" data-flag="https://flagcdn.com/hn.svg">HNL - Honduran Lempira</option>
+                <option value="htg" data-flag="https://flagcdn.com/ht.svg">HTG - Haitian Gourde</option>
+                <option value="huf" data-flag="https://flagcdn.com/hu.svg">HUF - Hungarian Forint</option>
+                <option value="idr" data-flag="https://flagcdn.com/id.svg">IDR - Indonesian Rupiah</option>
+                <option value="ils" data-flag="https://flagcdn.com/il.svg">ILS - Israeli Shekel</option>
+                <option value="imp" data-flag="https://flagcdn.com/im.svg">IMP - Isle of Man Pound</option>
+                <option value="inr" data-flag="https://flagcdn.com/in.svg">INR - Indian Rupee</option>
+                <option value="iqd" data-flag="https://flagcdn.com/iq.svg">IQD - Iraqi Dinar</option>
+                <option value="irr" data-flag="https://flagcdn.com/ir.svg">IRR - Iranian Rial</option>
+                <option value="isk" data-flag="https://flagcdn.com/is.svg">ISK - Icelandic Krona</option>
+                <option value="jmd" data-flag="https://flagcdn.com/jm.svg">JMD - Jamaican Dollar</option>
+                <option value="jod" data-flag="https://flagcdn.com/jo.svg">JOD - Jordanian Dinar</option>
+                <option value="kes" data-flag="https://flagcdn.com/ke.svg">KES - Kenyan Shilling</option>
+                <option value="kgs" data-flag="https://flagcdn.com/kg.svg">KGS - Kyrgystani Som</option>
+                <option value="khr" data-flag="https://flagcdn.com/kh.svg">KHR - Cambodian Riel</option>
+                <option value="kmf" data-flag="https://flagcdn.com/km.svg">KMF - Comorian Franc</option>
+                <option value="kpw" data-flag="https://flagcdn.com/kp.svg">KPW - North Korean Won</option>
+                <option value="krw" data-flag="https://flagcdn.com/kr.svg">KRW - South Korean Won</option>
+                <option value="kwd" data-flag="https://flagcdn.com/kw.svg">KWD - Kuwaiti Dinar</option>
+                <option value="kyd" data-flag="https://flagcdn.com/ky.svg">KYD - Cayman Islands Dollar</option>
+                <option value="kzt" data-flag="https://flagcdn.com/kz.svg">KZT - Kazakhstani Tenge</option>
+                <option value="lak" data-flag="https://flagcdn.com/la.svg">LAK - Lao Kip</option>
+                <option value="lbp" data-flag="https://flagcdn.com/lb.svg">LBP - Lebanese Pound</option>
+                <option value="lkr" data-flag="https://flagcdn.com/lk.svg">LKR - Sri Lankan Rupee</option>
+                <option value="lrd" data-flag="https://flagcdn.com/lr.svg">LRD - Liberian Dollar</option>
+                <option value="lsl" data-flag="https://flagcdn.com/ls.svg">LSL - Lesotho Loti</option>
+                <option value="lyd" data-flag="https://flagcdn.com/ly.svg">LYD - Libyan Dinar</option>
+                <option value="mad" data-flag="https://flagcdn.com/ma.svg">MAD - Moroccan Dirham</option>
+                <option value="mdl" data-flag="https://flagcdn.com/md.svg">MDL - Moldovan Leu</option>
+                <option value="mga" data-flag="https://flagcdn.com/mg.svg">MGA - Malagasy Ariary</option>
+                <option value="mkd" data-flag="https://flagcdn.com/mk.svg">MKD - Macedonian Denar</option>
+                <option value="mmk" data-flag="https://flagcdn.com/mm.svg">MMK - Myanmar Kyat</option>
+                <option value="mnt" data-flag="https://flagcdn.com/mn.svg">MNT - Mongolian Tugrik</option>
+                <option value="mop" data-flag="https://flagcdn.com/mo.svg">MOP - Macanese Pataca</option>
+                <option value="mru" data-flag="https://flagcdn.com/mr.svg">MRU - Mauritanian Ouguiya</option>
+                <option value="mur" data-flag="https://flagcdn.com/mu.svg">MUR - Mauritian Rupee</option>
+                <option value="mvr" data-flag="https://flagcdn.com/mv.svg">MVR - Maldivian Rufiyaa</option>
+                <option value="mwk" data-flag="https://flagcdn.com/mw.svg">MWK - Malawian Kwacha</option>
+                <option value="mxn" data-flag="https://flagcdn.com/mx.svg">MXN - Mexican Peso</option>
+                <option value="myr" data-flag="https://flagcdn.com/my.svg">MYR - Malaysian Ringgit</option>
+                <option value="mzn" data-flag="https://flagcdn.com/mz.svg">MZN - Mozambican Metical</option>
+                <option value="nad" data-flag="https://flagcdn.com/na.svg">NAD - Namibian Dollar</option>
+                <option value="ngn" data-flag="https://flagcdn.com/ng.svg">NGN - Nigerian Naira</option>
+                <option value="nio" data-flag="https://flagcdn.com/ni.svg">NIO - Nicaraguan Cordoba</option>
+                <option value="nok" data-flag="https://flagcdn.com/no.svg">NOK - Norwegian Krone</option>
+                <option value="npr" data-flag="https://flagcdn.com/np.svg">NPR - Nepalese Rupee</option>
+                <option value="nzd" data-flag="https://flagcdn.com/nz.svg">NZD - New Zealand Dollar</option>
+                <option value="omr" data-flag="https://flagcdn.com/om.svg">OMR - Omani Rial</option>
+                <option value="pab" data-flag="https://flagcdn.com/pa.svg">PAB - Panamanian Balboa</option>
+                <option value="pen" data-flag="https://flagcdn.com/pe.svg">PEN - Peruvian Nuevo Sol</option>
+                <option value="pgk" data-flag="https://flagcdn.com/pg.svg">PGK - Papua New Guinean Kina</option>
+                <option value="php" data-flag="https://flagcdn.com/ph.svg">PHP - Philippine Peso</option>
+                <option value="pkr" data-flag="https://flagcdn.com/pk.svg">PKR - Pakistani Rupee</option>
+                <option value="pln" data-flag="https://flagcdn.com/pl.svg">PLN - Polish Zloty</option>
+                <option value="pyg" data-flag="https://flagcdn.com/py.svg">PYG - Paraguayan Guarani</option>
+                <option value="qar" data-flag="https://flagcdn.com/qa.svg">QAR - Qatari Riyal</option>
+                <option value="ron" data-flag="https://flagcdn.com/ro.svg">RON - Romanian Leu</option>
+                <option value="rsd" data-flag="https://flagcdn.com/rs.svg">RSD - Serbian Dinar</option>
+                <option value="rub" data-flag="https://flagcdn.com/ru.svg">RUB - Russian Ruble</option>
+                <option value="rwf" data-flag="https://flagcdn.com/rw.svg">RWF - Rwandan Franc</option>
+                <option value="sar" data-flag="https://flagcdn.com/sa.svg">SAR - Saudi Arabian Riyal</option>
+                <option value="sbd" data-flag="https://flagcdn.com/sb.svg">SBD - Solomon Islands Dollar</option>
+                <option value="scr" data-flag="https://flagcdn.com/sc.svg">SCR - Seychellois Rupee</option>
+                <option value="sdg" data-flag="https://flagcdn.com/sd.svg">SDG - Sudanese Pound</option>
+                <option value="sek" data-flag="https://flagcdn.com/se.svg">SEK - Swedish Krona</option>
+                <option value="sgd" data-flag="https://flagcdn.com/sg.svg">SGD - Singapore Dollar</option>
+                <option value="shp" data-flag="https://flagcdn.com/sh.svg">SHP - Saint Helena Pound</option>
+                <option value="sle" data-flag="https://flagcdn.com/sl.svg">SLE - Sierra Leonean Leone</option>
+                <option value="sos" data-flag="https://flagcdn.com/so.svg">SOS - Somali Shilling</option>
+                <option value="srd" data-flag="https://flagcdn.com/sr.svg">SRD - Surinamese Dollar</option>
+                <option value="std" data-flag="https://flagcdn.com/st.svg">STN - Sao Tomean Dobra</option>
+                <option value="syp" data-flag="https://flagcdn.com/sy.svg">SYP - Syrian Pound</option>
+                <option value="szl" data-flag="https://flagcdn.com/sz.svg">SZL - Swazi Lilangeni</option>
+                <option value="thb" data-flag="https://flagcdn.com/th.svg">THB - Thai Baht</option>
+                <option value="tjs" data-flag="https://flagcdn.com/tj.svg">TJS - Tajikistani Somoni</option>
+                <option value="tmt" data-flag="https://flagcdn.com/tm.svg">TMT - Turkmenistani Manat</option>
+                <option value="tnd" data-flag="https://flagcdn.com/tn.svg">TND - Tunisian Dinar</option>
+                <option value="top" data-flag="https://flagcdn.com/to.svg">TOP - Tongan Pa'anga</option>
+                <option value="try" data-flag="https://flagcdn.com/tr.svg">TRY - Turkish Lira</option>
+                <option value="ttd" data-flag="https://flagcdn.com/tt.svg">TTD - Trinidad and Tobago Dollar</option>
+                <option value="twd" data-flag="https://flagcdn.com/tw.svg">TWD - Taiwan New Dollar</option>
+                <option value="tzs" data-flag="https://flagcdn.com/tz.svg">TZS - Tanzanian Shilling</option>
+                <option value="uah" data-flag="https://flagcdn.com/ua.svg">UAH - Ukrainian Hryvnia</option>
+                <option value="ugx" data-flag="https://flagcdn.com/ug.svg">UGX - Ugandan Shilling</option>
+                <option value="uyu" data-flag="https://flagcdn.com/uy.svg">UYU - Uruguayan Peso</option>
+                <option value="uzs" data-flag="https://flagcdn.com/uz.svg">UZS - Uzbekistani Som</option>
+                <option value="ves" data-flag="https://flagcdn.com/ve.svg">VES - Venezuelan Bolívar</option>
+                <option value="vnd" data-flag="https://flagcdn.com/vn.svg">VND - Vietnamese Dong</option>
+                <option value="vuv" data-flag="https://flagcdn.com/vu.svg">VUV - Ni-Vanuatu Vatu</option>
+                <option value="wst" data-flag="https://flagcdn.com/ws.svg">WST - Samoan Tala</option>
+                <option value="xaf" data-flag="https://flagcdn.com/cf.svg">XAF - Central African CFA Franc BEAC</option>
+                <option value="xcd" data-flag="https://flagcdn.com/ec.svg">XCD - East Caribbean Dollar</option>
+                <option value="xof" data-flag="https://flagcdn.com/bj.svg">XOF - West African CFA Franc</option>
+                <option value="xpf" data-flag="https://flagcdn.com/pf.svg">XPF - CFP Franc</option>
+                <option value="yer" data-flag="https://flagcdn.com/ye.svg">YER - Yemeni Rial</option>
+                <option value="zar" data-flag="https://flagcdn.com/za.svg">ZAR - South African Rand</option>
+                <option value="zmw" data-flag="https://flagcdn.com/zm.svg">ZMW - Zambian Kwacha</option>
+                <option value="zwl" data-flag="https://flagcdn.com/zw.svg">ZWL - Zimbabwean Dollar</option> 
+            <!-- Добавьте другие валюты по необходимости -->
+        </select>
+        &nbsp; <button id="swap-btn">⇅</button>
+        <span class="text-b">&nbsp; To</span>
+        <select id="targetCurrency" class="currency-select">
+            <option value="usd" data-flag="https://flagcdn.com/us.svg">USD - US Dollar</option>
+            <option value="eur" data-flag="https://flagcdn.com/eu.svg">EUR - Euro</option>
+            <option value="gbp" data-flag="https://flagcdn.com/gb.svg">GBP - British Pound</option>
+            <option value="cad" data-flag="https://flagcdn.com/ca.svg">CAD - Canadian Dollar</option>
+            <option value="jpy" data-flag="https://flagcdn.com/jp.svg">JPY - Japanese Yen</option>
+            <option value="cny" data-flag="https://flagcdn.com/cn.svg">CNY - Chinese Yuan</option>
+            <option value="aed" data-flag="https://flagcdn.com/ae.svg">AED - Emirati Dirham</option>
+            <option value="afn" data-flag="https://flagcdn.com/af.svg">AFN - Afghan Afghani</option>
+            <option value="all" data-flag="https://flagcdn.com/al.svg">ALL - Albanian Lek</option>
+            <option value="amd" data-flag="https://flagcdn.com/am.svg">AMD - Armenian Dram</option>
+            <option value="aoa" data-flag="https://flagcdn.com/ao.svg">AOA - Angolan Kwanza</option>
+            <option value="ars" data-flag="https://flagcdn.com/ar.svg">ARS - Argentine Peso</option>
+            <option value="aud" data-flag="https://flagcdn.com/au.svg">AUD - Australian Dollar</option>
+            <option value="awg" data-flag="https://flagcdn.com/aw.svg">AWG - Aruban or Dutch Guilder</option>
+            <option value="azn" data-flag="https://flagcdn.com/az.svg">AZN - Azerbaijan Manat</option>
+            <option value="bam" data-flag="https://flagcdn.com/ba.svg">BAM - Bosnian Convertible Mark</option>
+            <option value="bbd" data-flag="https://flagcdn.com/bb.svg">BBD - Barbadian or Bajan Dollar</option>
+            <option value="bgn" data-flag="https://flagcdn.com/bg.svg">BGN - Bulgarian Lev</option>
+            <option value="bhd" data-flag="https://flagcdn.com/bh.svg">BHD - Bahraini Dinar</option>
+            <option value="bif" data-flag="https://flagcdn.com/bi.svg">BIF - Burundian Franc</option>
+            <option value="bmd" data-flag="https://flagcdn.com/bm.svg">BMD - Bermudian Dollar</option>
+            <option value="bnd" data-flag="https://flagcdn.com/bn.svg">BND - Bruneian Dollar</option>
+            <option value="bob" data-flag="https://flagcdn.com/bo.svg">BOB - Bolivian Bolíviano</option>
+            <option value="brl" data-flag="https://flagcdn.com/br.svg">BRL - Brazilian Real</option>
+            <option value="bsd" data-flag="https://flagcdn.com/bs.svg">BSD - Bahamian Dollar</option>
+            <option value="btn" data-flag="https://flagcdn.com/bt.svg">BTN - Bhutanese Ngultrum</option>
+            <option value="bwp" data-flag="https://flagcdn.com/bw.svg">BWP - Botswana Pula</option>
+            <option value="byn" data-flag="https://flagcdn.com/by.svg">BYN - Belarusian Ruble</option>
+            <option value="bzd" data-flag="https://flagcdn.com/bz.svg">BZD - Belizean Dollar</option>
+            <option value="cdf" data-flag="https://flagcdn.com/cd.svg">CDF - Congolese Franc</option>
+            <option value="chf" data-flag="https://flagcdn.com/ch.svg">CHF - Swiss Franc</option>
+            <option value="clp" data-flag="https://flagcdn.com/cl.svg">CLP - Chilean Peso</option>
+            <option value="cnh" data-flag="https://flagcdn.com/cn.svg">CNH - Chinese Yuan Renminbi Offshore</option>
+            <option value="cop" data-flag="https://flagcdn.com/co.svg">COP - Colombian Peso</option>
+            <option value="crc" data-flag="https://flagcdn.com/cr.svg">CRC - Costa Rican Colon</option>
+            <option value="cup" data-flag="https://flagcdn.com/cu.svg">CUP - Cuban Peso</option>
+            <option value="cve" data-flag="https://flagcdn.com/cv.svg">CVE - Cape Verdean Escudo</option>
+            <option value="czk" data-flag="https://flagcdn.com/cz.svg">CZK - Czech Koruna</option>
+            <option value="djf" data-flag="https://flagcdn.com/dj.svg">DJF - Djiboutian Franc</option>
+            <option value="dkk" data-flag="https://flagcdn.com/dk.svg">DKK - Danish Krone</option>
+            <option value="dop" data-flag="https://flagcdn.com/do.svg">DOP - Dominican Peso</option>
+            <option value="dzd" data-flag="https://flagcdn.com/dz.svg">DZD - Algerian Dinar</option>
+            <option value="egp" data-flag="https://flagcdn.com/eg.svg">EGP - Egyptian Pound</option>
+            <option value="ern" data-flag="https://flagcdn.com/er.svg">ERN - Eritrean Nakfa</option>
+            <option value="etb" data-flag="https://flagcdn.com/et.svg">ETB - Ethiopian Birr</option>
+            <option value="fjd" data-flag="https://flagcdn.com/fj.svg">FJD - Fijian Dollar</option>
+            <option value="fkp" data-flag="https://flagcdn.com/fk.svg">FKP - Falkland Island Pound</option>
+            <option value="gel" data-flag="https://flagcdn.com/ge.svg">GEL - Georgian Lari</option>
+            <option value="ggp" data-flag="https://flagcdn.com/gg.svg">GGP - Guernsey Pound</option>
+            <option value="ghs" data-flag="https://flagcdn.com/gh.svg">GHS - Ghanaian Cedi</option>
+            <option value="gip" data-flag="https://flagcdn.com/gi.svg">GIP - Gibraltar Pound</option>
+            <option value="gmd" data-flag="https://flagcdn.com/gm.svg">GMD - Gambian Dalasi</option>
+            <option value="gnf" data-flag="https://flagcdn.com/gn.svg">GNF - Guinean Franc</option>
+            <option value="gtq" data-flag="https://flagcdn.com/gt.svg">GTQ - Guatemalan Quetzal</option>
+            <option value="gyd" data-flag="https://flagcdn.com/gy.svg">GYD - Guyanese Dollar</option>
+            <option value="hkd" data-flag="https://flagcdn.com/hk.svg">HKD - Hong Kong Dollar</option>
+            <option value="hnl" data-flag="https://flagcdn.com/hn.svg">HNL - Honduran Lempira</option>
+            <option value="htg" data-flag="https://flagcdn.com/ht.svg">HTG - Haitian Gourde</option>
+            <option value="huf" data-flag="https://flagcdn.com/hu.svg">HUF - Hungarian Forint</option>
+            <option value="idr" data-flag="https://flagcdn.com/id.svg">IDR - Indonesian Rupiah</option>
+            <option value="ils" data-flag="https://flagcdn.com/il.svg">ILS - Israeli Shekel</option>
+            <option value="imp" data-flag="https://flagcdn.com/im.svg">IMP - Isle of Man Pound</option>
+            <option value="inr" data-flag="https://flagcdn.com/in.svg">INR - Indian Rupee</option>
+            <option value="iqd" data-flag="https://flagcdn.com/iq.svg">IQD - Iraqi Dinar</option>
+            <option value="irr" data-flag="https://flagcdn.com/ir.svg">IRR - Iranian Rial</option>
+            <option value="isk" data-flag="https://flagcdn.com/is.svg">ISK - Icelandic Krona</option>
+            <option value="jmd" data-flag="https://flagcdn.com/jm.svg">JMD - Jamaican Dollar</option>
+            <option value="jod" data-flag="https://flagcdn.com/jo.svg">JOD - Jordanian Dinar</option>
+            <option value="kes" data-flag="https://flagcdn.com/ke.svg">KES - Kenyan Shilling</option>
+            <option value="kgs" data-flag="https://flagcdn.com/kg.svg">KGS - Kyrgystani Som</option>
+            <option value="khr" data-flag="https://flagcdn.com/kh.svg">KHR - Cambodian Riel</option>
+            <option value="kmf" data-flag="https://flagcdn.com/km.svg">KMF - Comorian Franc</option>
+            <option value="kpw" data-flag="https://flagcdn.com/kp.svg">KPW - North Korean Won</option>
+            <option value="krw" data-flag="https://flagcdn.com/kr.svg">KRW - South Korean Won</option>
+            <option value="kwd" data-flag="https://flagcdn.com/kw.svg">KWD - Kuwaiti Dinar</option>
+            <option value="kyd" data-flag="https://flagcdn.com/ky.svg">KYD - Cayman Islands Dollar</option>
+            <option value="kzt" data-flag="https://flagcdn.com/kz.svg">KZT - Kazakhstani Tenge</option>
+            <option value="lak" data-flag="https://flagcdn.com/la.svg">LAK - Lao Kip</option>
+            <option value="lbp" data-flag="https://flagcdn.com/lb.svg">LBP - Lebanese Pound</option>
+            <option value="lkr" data-flag="https://flagcdn.com/lk.svg">LKR - Sri Lankan Rupee</option>
+            <option value="lrd" data-flag="https://flagcdn.com/lr.svg">LRD - Liberian Dollar</option>
+            <option value="lsl" data-flag="https://flagcdn.com/ls.svg">LSL - Lesotho Loti</option>
+            <option value="lyd" data-flag="https://flagcdn.com/ly.svg">LYD - Libyan Dinar</option>
+            <option value="mad" data-flag="https://flagcdn.com/ma.svg">MAD - Moroccan Dirham</option>
+            <option value="mdl" data-flag="https://flagcdn.com/md.svg">MDL - Moldovan Leu</option>
+            <option value="mga" data-flag="https://flagcdn.com/mg.svg">MGA - Malagasy Ariary</option>
+            <option value="mkd" data-flag="https://flagcdn.com/mk.svg">MKD - Macedonian Denar</option>
+            <option value="mmk" data-flag="https://flagcdn.com/mm.svg">MMK - Myanmar Kyat</option>
+            <option value="mnt" data-flag="https://flagcdn.com/mn.svg">MNT - Mongolian Tugrik</option>
+            <option value="mop" data-flag="https://flagcdn.com/mo.svg">MOP - Macanese Pataca</option>
+            <option value="mru" data-flag="https://flagcdn.com/mr.svg">MRU - Mauritanian Ouguiya</option>
+            <option value="mur" data-flag="https://flagcdn.com/mu.svg">MUR - Mauritian Rupee</option>
+            <option value="mvr" data-flag="https://flagcdn.com/mv.svg">MVR - Maldivian Rufiyaa</option>
+            <option value="mwk" data-flag="https://flagcdn.com/mw.svg">MWK - Malawian Kwacha</option>
+            <option value="mxn" data-flag="https://flagcdn.com/mx.svg">MXN - Mexican Peso</option>
+            <option value="myr" data-flag="https://flagcdn.com/my.svg">MYR - Malaysian Ringgit</option>
+            <option value="mzn" data-flag="https://flagcdn.com/mz.svg">MZN - Mozambican Metical</option>
+            <option value="nad" data-flag="https://flagcdn.com/na.svg">NAD - Namibian Dollar</option>
+            <option value="ngn" data-flag="https://flagcdn.com/ng.svg">NGN - Nigerian Naira</option>
+            <option value="nio" data-flag="https://flagcdn.com/ni.svg">NIO - Nicaraguan Cordoba</option>
+            <option value="nok" data-flag="https://flagcdn.com/no.svg">NOK - Norwegian Krone</option>
+            <option value="npr" data-flag="https://flagcdn.com/np.svg">NPR - Nepalese Rupee</option>
+            <option value="nzd" data-flag="https://flagcdn.com/nz.svg">NZD - New Zealand Dollar</option>
+            <option value="omr" data-flag="https://flagcdn.com/om.svg">OMR - Omani Rial</option>
+            <option value="pab" data-flag="https://flagcdn.com/pa.svg">PAB - Panamanian Balboa</option>
+            <option value="pen" data-flag="https://flagcdn.com/pe.svg">PEN - Peruvian Nuevo Sol</option>
+            <option value="pgk" data-flag="https://flagcdn.com/pg.svg">PGK - Papua New Guinean Kina</option>
+            <option value="php" data-flag="https://flagcdn.com/ph.svg">PHP - Philippine Peso</option>
+            <option value="pkr" data-flag="https://flagcdn.com/pk.svg">PKR - Pakistani Rupee</option>
+            <option value="pln" data-flag="https://flagcdn.com/pl.svg">PLN - Polish Zloty</option>
+            <option value="pyg" data-flag="https://flagcdn.com/py.svg">PYG - Paraguayan Guarani</option>
+            <option value="qar" data-flag="https://flagcdn.com/qa.svg">QAR - Qatari Riyal</option>
+            <option value="ron" data-flag="https://flagcdn.com/ro.svg">RON - Romanian Leu</option>
+            <option value="rsd" data-flag="https://flagcdn.com/rs.svg">RSD - Serbian Dinar</option>
+            <option value="rub" data-flag="https://flagcdn.com/ru.svg">RUB - Russian Ruble</option>
+            <option value="rwf" data-flag="https://flagcdn.com/rw.svg">RWF - Rwandan Franc</option>
+            <option value="sar" data-flag="https://flagcdn.com/sa.svg">SAR - Saudi Arabian Riyal</option>
+            <option value="sbd" data-flag="https://flagcdn.com/sb.svg">SBD - Solomon Islands Dollar</option>
+            <option value="scr" data-flag="https://flagcdn.com/sc.svg">SCR - Seychellois Rupee</option>
+            <option value="sdg" data-flag="https://flagcdn.com/sd.svg">SDG - Sudanese Pound</option>
+            <option value="sek" data-flag="https://flagcdn.com/se.svg">SEK - Swedish Krona</option>
+            <option value="sgd" data-flag="https://flagcdn.com/sg.svg">SGD - Singapore Dollar</option>
+            <option value="shp" data-flag="https://flagcdn.com/sh.svg">SHP - Saint Helena Pound</option>
+            <option value="sle" data-flag="https://flagcdn.com/sl.svg">SLE - Sierra Leonean Leone</option>
+            <option value="sos" data-flag="https://flagcdn.com/so.svg">SOS - Somali Shilling</option>
+            <option value="srd" data-flag="https://flagcdn.com/sr.svg">SRD - Surinamese Dollar</option>
+            <option value="std" data-flag="https://flagcdn.com/st.svg">STN - Sao Tomean Dobra</option>
+            <option value="syp" data-flag="https://flagcdn.com/sy.svg">SYP - Syrian Pound</option>
+            <option value="szl" data-flag="https://flagcdn.com/sz.svg">SZL - Swazi Lilangeni</option>
+            <option value="thb" data-flag="https://flagcdn.com/th.svg">THB - Thai Baht</option>
+            <option value="tjs" data-flag="https://flagcdn.com/tj.svg">TJS - Tajikistani Somoni</option>
+            <option value="tmt" data-flag="https://flagcdn.com/tm.svg">TMT - Turkmenistani Manat</option>
+            <option value="tnd" data-flag="https://flagcdn.com/tn.svg">TND - Tunisian Dinar</option>
+            <option value="top" data-flag="https://flagcdn.com/to.svg">TOP - Tongan Pa'anga</option>
+            <option value="try" data-flag="https://flagcdn.com/tr.svg">TRY - Turkish Lira</option>
+            <option value="ttd" data-flag="https://flagcdn.com/tt.svg">TTD - Trinidad and Tobago Dollar</option>
+            <option value="twd" data-flag="https://flagcdn.com/tw.svg">TWD - Taiwan New Dollar</option>
+            <option value="tzs" data-flag="https://flagcdn.com/tz.svg">TZS - Tanzanian Shilling</option>
+            <option value="uah" data-flag="https://flagcdn.com/ua.svg">UAH - Ukrainian Hryvnia</option>
+            <option value="ugx" data-flag="https://flagcdn.com/ug.svg">UGX - Ugandan Shilling</option>
+            <option value="uyu" data-flag="https://flagcdn.com/uy.svg">UYU - Uruguayan Peso</option>
+            <option value="uzs" data-flag="https://flagcdn.com/uz.svg">UZS - Uzbekistani Som</option>
+            <option value="ves" data-flag="https://flagcdn.com/ve.svg">VES - Venezuelan Bolívar</option>
+            <option value="vnd" data-flag="https://flagcdn.com/vn.svg">VND - Vietnamese Dong</option>
+            <option value="vuv" data-flag="https://flagcdn.com/vu.svg">VUV - Ni-Vanuatu Vatu</option>
+            <option value="wst" data-flag="https://flagcdn.com/ws.svg">WST - Samoan Tala</option>
+            <option value="xaf" data-flag="https://flagcdn.com/cf.svg">XAF - Central African CFA Franc BEAC</option>
+            <option value="xcd" data-flag="https://flagcdn.com/ec.svg">XCD - East Caribbean Dollar</option>
+            <option value="xof" data-flag="https://flagcdn.com/bj.svg">XOF - West African CFA Franc</option>
+            <option value="xpf" data-flag="https://flagcdn.com/pf.svg">XPF - CFP Franc</option>
+            <option value="yer" data-flag="https://flagcdn.com/ye.svg">YER - Yemeni Rial</option>
+            <option value="zar" data-flag="https://flagcdn.com/za.svg">ZAR - South African Rand</option>
+            <option value="zmw" data-flag="https://flagcdn.com/zm.svg">ZMW - Zambian Kwacha</option>
+            <option value="zwl" data-flag="https://flagcdn.com/zw.svg">ZWL - Zimbabwean Dollar</option>
+            <!-- Добавьте другие валюты по необходимости -->
+        </select>
+        
+        <div id="result"></div>
+        <hr>
+        <div class="footer text-right">
+            This Currency Converter use mid-market rates from third-party services and is provided as is. It is for informational purposes only.
+            <br>
+            <div id="update-time"></div>
+            Powered by <a href="http://mavateccorp.com" target="_blank">Mavatec Corporation</a>
+        </div>
+    </div>
+    
+    <script src="jquery.min.js"></script>
+    <script src="select2.min.js"></script>
+    <script src="script.js"></script>
+    <script src="swap-button.js"></script>
+</body>
+</html>
